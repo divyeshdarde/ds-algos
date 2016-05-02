@@ -9,6 +9,13 @@ struct node
     struct node* next;
 };
 
+// Using typedefs makes things much cleaner and readable.
+// You dont have to write struct everywhere.
+
+// We could also have included the pointer in the typedef and make the code Java-like:
+// typedef struct node* listnode;
+// While declaring: listnode node;
+// But doing so hides the pointer and might make things difficult to debug and hence isnt a recommended coding practice.
 typedef struct node listnode;
 
 /**
@@ -21,7 +28,6 @@ void printList(listnode* head){
         current = current->next;
     }
 }
-
 
 /**
  * Module to create new node.
